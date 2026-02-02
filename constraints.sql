@@ -196,23 +196,30 @@ ERROR: 1054: Unknown column 'test' in 'field list'
  MySQL  localhost:33060+ ssl  constraints  SQL > 
 1.Students Insert – Explain Why Record Fails
 Explanation:
-The record with marks = 110 fails because the marks column has a CHECK constraint that restricts values between 0 and 100. Any value outside this range violates the constraint, so the database rejects the insertion to maintain data integrity.
+The record with marks = 110 fails because the marks column has a CHECK constraint that restricts values between 0 and 100. Any value outside this range violates the constraint, 
+ so the database rejects the insertion to maintain data integrity.
 2.Employees Insert – Explain Constraint Violations
 Explanation:
-The second employee record fails because the email column has a UNIQUE constraint, and duplicate email values are not allowed. The third employee record fails because the salary value is below the minimum allowed by the CHECK constraint. The database enforces these constraints to prevent invalid or inconsistent data.
+The second employee record fails because the email column has a UNIQUE constraint, and duplicate email values are not allowed. The third employee record fails because the salary
+ value is below the minimum allowed by the CHECK constraint. The database enforces these constraints to prevent invalid or inconsistent data.
 3. ️Insert with DEFAULT & AUTO_INCREMENT – Explain
 Explanation:
-When values are not provided for columns with AUTO_INCREMENT and DEFAULT constraints, the database automatically assigns values. AUTO_INCREMENT generates the next sequential number, and DEFAULT assigns the predefined value. This reduces manual input and ensures consistency.
+When values are not provided for columns with AUTO_INCREMENT and DEFAULT constraints, the database automatically assigns values. AUTO_INCREMENT generates the next sequential number, 
+ and DEFAULT assigns the predefined value. This reduces manual input and ensures consistency.
 4️.CHECK Constraint Query – Explain
 Explanation:
-The SELECT query filters only those records that satisfy the CHECK constraint condition and have an active status. This ensures that only valid and currently active student records are retrieved.
+The SELECT query filters only those records that satisfy the CHECK constraint condition and have an active status. This ensures that only valid and currently active student records
+ are retrieved.
 5️.UPDATE with Constraints – Explain Why It May Fail
 Explanation:
-The update operation may fail because increasing marks by 5 can cause the value to exceed the maximum limit defined by the CHECK constraint (marks ≤ 100). When an update violates a constraint, the database rejects the operation to preserve data integrity.
+The update operation may fail because increasing marks by 5 can cause the value to exceed the maximum limit defined by the CHECK constraint (marks ≤ 100). When an update violates a 
+ constraint, the database rejects the operation to preserve data integrity.
 6. Users Table – Constraint Violations (Explain Why)
 Explanation:
-The record with age 17 fails because it violates the CHECK constraint that enforces the allowed age range. The record with a non-Gmail email address fails because it does not match the email format enforced by the CHECK constraint.
+The record with age 17 fails because it violates the CHECK constraint that enforces the allowed age range. The record with a non-Gmail email address fails because it does not match 
+ the email format enforced by the CHECK constraint.
 Only the valid record is inserted because it satisfies all constraints.
 ️7. Multiple Inserts with Constraints – Explain Why
 Explanation:
-When inserting multiple rows in a single statement, if any one row violates a constraint such as NOT NULL or CHECK, the entire insert operation fails. This ensures transactional consistency and prevents partial insertion of invalid data.
+When inserting multiple rows in a single statement, if any one row violates a constraint such as NOT NULL or CHECK, the entire insert operation fails. This ensures transactional 
+ consistency and prevents partial insertion of invalid data.
